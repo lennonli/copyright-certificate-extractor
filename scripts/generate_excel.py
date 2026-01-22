@@ -67,6 +67,15 @@ def generate_excel(output_file, data_list):
     try:
         wb.save(output_file)
         print(f"Excel file generated: {output_file}")
+        
+        # Automatically open the file on macOS
+        import subprocess
+        try:
+            subprocess.run(["open", str(output_file)], check=True)
+            print(f"Opening {output_file}...")
+        except Exception as oe:
+            print(f"Could not open file: {oe}")
+            
     except Exception as e:
         print(f"Error saving Excel file: {e}", file=sys.stderr)
 
