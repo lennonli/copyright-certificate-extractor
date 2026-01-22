@@ -5,6 +5,38 @@ All notable changes to the Copyright Certificate Extractor skill will be documen
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2024-01-22
+
+### Added - Excel Quality Improvements
+- **Smart data cleaning**: Automatic removal of OCR noise (|, ||, ，, 。, extra spaces)
+- **Auto-numbering**: Sequential numbering (1, 2, 3...) instead of inconsistent OCR numbers
+- **OCR error correction**: Common Chinese OCR mistakes (基浮→悬浮, 折又→折叠, 钦件→软件)
+- **Data validation**: Automatic filtering of invalid/garbage OCR results
+- **Notes column**: Preserves original OCR serial numbers for reference
+
+### Improved - Excel Formatting
+- **Professional styling**: Blue header with white data area
+- **Frozen header row**: Title row stays visible when scrolling
+- **Smart alignment**: Numbers centered, text left-aligned
+- **Optimized column widths**:
+  - Serial: 8 chars
+  - Owner: 30 chars
+  - Software name: 50 chars (widest for long names)
+  - Registration: 20 chars
+- **Microsoft YaHei font**: Cleaner, more professional appearance
+
+### Fixed
+- Fixed inconsistent serial numbers (None, gaps, non-sequential)
+- Fixed OCR noise pollution in all text fields
+- Fixed excessive punctuation and symbols
+- Fixed data quality issues from poor OCR
+
+### Technical
+- Added `clean_text()` function for intelligent text cleaning
+- Added `validate_and_clean_data()` for data validation
+- Enhanced `generate_excel()` with auto-numbering and formatting
+- Improved data filtering to skip invalid OCR results
+
 ## [1.0.0] - 2024-01-22
 
 ### Added - Claude Code Skill Integration
@@ -56,5 +88,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Version History
 
+- **1.1.0** (2024-01-22): Excel quality improvements - clean data, auto-numbering, professional formatting
 - **1.0.0** (2024-01-22): Initial Claude Code skill release
 - **0.1.0** (Pre-release): Original Python scripts version
