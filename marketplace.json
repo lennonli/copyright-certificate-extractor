@@ -1,0 +1,81 @@
+{
+  "name": "copyright-certificate-extractor",
+  "version": "1.0.0",
+  "title": "Copyright Certificate Extractor",
+  "description": "Extract structured information from Chinese software copyright certificates using OCR and intelligent parsing",
+  "author": "lennonli",
+  "homepage": "https://github.com/lennonli/copyright-certificate-extractor",
+  "tags": [
+    "ocr",
+    "certificate",
+    "copyright",
+    "extraction",
+    "chinese",
+    "batch-processing",
+    "pdf",
+    "document-processing"
+  ],
+  "categories": [
+    "productivity",
+    "data-extraction",
+    "automation"
+  ],
+  "triggers": [
+    "copyright certificate",
+    "软件著作权",
+    "著作权证书",
+    "extract certificate",
+    "parse copyright",
+    "批量处理证书"
+  ],
+  "dependencies": {
+    "system": {
+      "tesseract": "Required for OCR text extraction",
+      "poppler": "Required for PDF processing"
+    },
+    "python": {
+      "pytesseract": ">=0.3.0",
+      "pdf2image": ">=1.16.0",
+      "Pillow": ">=9.0.0",
+      "openpyxl": ">=3.0.0"
+    }
+  },
+  "platform": {
+    "os": ["macOS", "Linux", "Windows"],
+    "python": ">=3.7"
+  },
+  "files": {
+    "skill": "skill.md",
+    "readme": "README.md",
+    "scripts": [
+      "scripts/extract_ocr.py",
+      "scripts/parse_copyright.py",
+      "scripts/batch_extract.py",
+      "scripts/generate_excel.py"
+    ],
+    "references": [
+      "references/llm_prompt.md"
+    ]
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lennonli/copyright-certificate-extractor"
+  },
+  "capabilities": [
+    "Multi-format support (PDF, JPG, PNG, BMP, TIFF)",
+    "High-precision OCR with image preprocessing",
+    "Intelligent field extraction (7 key fields)",
+    "Automatic error correction with filename fallback",
+    "Batch processing with Excel report generation",
+    "Multi-page PDF support"
+  ],
+  "use_cases": [
+    "Legal compliance documentation",
+    "IP portfolio management",
+    "Batch certificate digitization",
+    "Copyright database creation",
+    "Automated filing systems"
+  ],
+  "installation_notes": "Requires Tesseract OCR with Chinese language pack (chi_sim) and Poppler for PDF processing. See README for detailed installation instructions."
+}
